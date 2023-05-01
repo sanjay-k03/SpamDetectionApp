@@ -1,8 +1,8 @@
-import * as React  from 'react';
+import * as React from 'react';
 import { useEffect } from 'react';
 import SendSMSContainer from './screens/SendSMSContainer';
 import { PermissionsAndroid } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native'; 
+import { NavigationContainer } from '@react-navigation/native';
 import SpamScreen from './screens/InboxScreen';
 import { AppContext, AppProvider } from './screens/useContext';
 import TabNavigation from './screens/TabNavigation';
@@ -33,7 +33,7 @@ const App = () => {
 
   useEffect(() => {
     requestMessagePermission();
-    }, []);
+  }, []);
 
   return (
     // <AppProvider>
@@ -43,7 +43,7 @@ const App = () => {
     // </AppProvider>
     <AppProvider>
       <NavigationContainer>
-        <SendSMSContainer />      
+        <SendSMSContainer />
       </NavigationContainer>
     </AppProvider>
   );
