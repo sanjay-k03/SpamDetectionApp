@@ -22,11 +22,11 @@ const InboxScreen = () => {
   };
 
   useEffect(() => {
-    fetch("https://55e4-125-17-180-42.in.ngrok.io/api/v1/sms_recive", requestOptions)
-    .then(response => response.text())
+    fetch("http://192.168.134.81:8000/api/v1/sms_recive", requestOptions)
+    .then(response => {response.text();console.log("Done");})
     .then(result => {
       let x = JSON.parse(result)
-      responseaddress = x.sender
+      let responseaddress = x.sender
       value.setApiResult(responseaddress);
       console.log(responseaddress)
       value.globalData.forEach(element => {
@@ -36,6 +36,7 @@ const InboxScreen = () => {
           value.spamdata.length == 0 ? value.setSpamdata([element]) : value.setSpamdata([...value.spamdata, element])
         }
       });
+      console.log("Done");
       // console.log(typeof(value.apiresult))
       // console.log(value.apiresult["sender"])
       // tempvar = value.apiresult.sender 
@@ -103,14 +104,16 @@ export default InboxScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent:'center',
+    alignItems:'center',
     backgroundColor: '#eee6ff',
   },
   header: {
     backgroundColor: '#50348b',
     flexDirection: 'row',
-    alignItems: 'center',
+    width:'100%',
     justifyContent: 'center',
-    height: 100,
+    height: "16%",
     borderBottomLeftRadius: 75,
     borderBottomRightRadius: 75
   },
@@ -138,11 +141,12 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   itemBody: {
-    height: 25,
+    height: 40,
     fontSize: 16,
     color: '#000',
   },
   itemFooter: {
+    //backgroundColor:'black',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

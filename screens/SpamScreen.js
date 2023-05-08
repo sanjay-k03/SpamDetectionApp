@@ -52,14 +52,16 @@ export default SpamScreen
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      justifyContent:'center',
+      alignItems:'center',
       backgroundColor: '#eee6ff',
     },
     header: {
       backgroundColor: '#50348b',
       flexDirection: 'row',
-      alignItems: 'center',
+      width:'100%',
       justifyContent: 'center',
-      height: 100,
+      height: '16%',
       borderBottomLeftRadius:75,
       borderBottomRightRadius:75
     },

@@ -8,6 +8,8 @@ const ProfileScreen = () => {
         <Image style={styles.headerImage} source={require('../img/shieldsquad.jpg')} />
         {/* <Text style={styles.headerText}>Spam</Text> */}
       </View>
+      <View style={styles.itemContainer}>
+      </View>
     </View>
   );
 };
@@ -15,14 +17,16 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent:'center',
+    alignItems:'center',
     backgroundColor: '#eee6ff',
   },
   header: {
     backgroundColor: '#50348b',
     flexDirection: 'row',
-    alignItems: 'center',
+    width:'100%',
     justifyContent: 'center',
-    height: 100,
+    height: "16%",
     borderBottomLeftRadius: 75,
     borderBottomRightRadius: 75
   },
@@ -32,12 +36,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   itemContainer: {
-    backgroundColor: '#ddccff',
+    backgroundColor: '#eee6ff',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 7.5,
     marginVertical: 8,
     marginHorizontal: 16,
     borderRadius: 10,
+    height:'84%',
+    // shadowColor:'black',
+    // shadowOffset: 5,
+    // shadowOpacity:1
   },
   itemAddress: {
     fontSize: 18,
